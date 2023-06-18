@@ -41,6 +41,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "d0d57ce5e74437f9281ecb700650b49e5c334031" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "2d6d3c7e49a24f6ffbbf7898241fefe9784f61bd" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "0bf8fbc2ca8f8cdb6efbd0a9e32740d7a991e4c3" },
+  "nvim-ts-rainbow2": { "branch": "master", "commit": "93fa50e5fbfa188d7552388a2290b9290c202d4b" },
   "nvim-web-devicons": { "branch": "master", "commit": "14b3a5ba63b82b60cde98d0a40319d80f25e8301" },
   "onedarkpro.nvim": { "branch": "main", "commit": "220405af9c1ebe466045106fbec8ea5fbb9d46ab" },
   "persistence.nvim": { "branch": "main", "commit": "4b8051c01f696d8849a5cb8afa9767be8db16e40" },
