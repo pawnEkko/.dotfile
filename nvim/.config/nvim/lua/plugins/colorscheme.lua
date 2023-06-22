@@ -4,7 +4,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox", --修改主题
+      colorscheme = "tokyonight", --修改主题
     },
   },
 
@@ -20,8 +20,12 @@ return {
   {
     "olimorris/onedarkpro.nvim",
     --onedark  onelight  onedark_vivid   onedark_dark 四色可选
+    lazy = true,
   },
 
   -- gruvbox
-  { "morhetz/gruvbox" },
+  { 
+	 "morhetz/gruvbox",
+	lazy = true,
+  },
 }

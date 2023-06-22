@@ -34,11 +34,12 @@ stow i3wm
 ```
 chmod 777 ~/.config/polybar/launch.sh
 ```
-3. 部分插件需要一些依赖、软件、或者环境存在才可以正常使用
+3. 部分NeoVim插件需要一些依赖、软件、或者环境存在才可以正常使用
 > 使用以下代码安装
 ```
 sudo pacman -S nodejs
 sudo pacman -S yarn
+sudo pacman -S rigrep
 ```
 
 ## 会使用更多的软件做更多的更新
