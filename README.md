@@ -42,6 +42,7 @@ sudo pacman -S yarn
 sudo pacman -S rigrep
 ```
 4. zsh使用oh-my-zsh管理插件 使用以下代码下载需要的插件
+> 要在根目录使用`source ~/.zshrc`这个指令来执行zsh的各种配置
 ```
 # 历史记录建议
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

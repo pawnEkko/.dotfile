@@ -22,6 +22,7 @@ alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
 alias ta='tree -a'
+alias lcat='lolcat'
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 ##################
