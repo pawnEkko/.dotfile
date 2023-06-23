@@ -20,6 +20,8 @@ key.set("n", "<A-j>", ":m .+1<CR>==") -- 向下移动
 -- 切换/关闭buffer
 key.set("n", "<S-h>", ":bnext<CR>") -- 切换到左边的buffer
 key.set("n", "<S-l>", ":bprevious<CR>") -- 切换到左边的buffer
+key.set("n", "<leader>bq", ":bdelete%<CR>") -- 选择关闭buffer
+key.set("n", "<leader>bc", ":BufferLinePickClose<CR>") -- 选择关闭buffer
 
 -- 快速移动
 key.set("n", "<S-j>", "8j")

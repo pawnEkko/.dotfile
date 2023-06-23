@@ -49,6 +49,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # 代码高亮
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+5. rofi要在终端中使用以下命令选择主题才可以应用   选择完成后要使用`Alt+a`确认选择
+```
+rofi-theme-selector
+```
 
 ## 会使用更多的软件做更多的更新
 
