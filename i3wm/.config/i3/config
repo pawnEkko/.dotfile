@@ -231,7 +231,7 @@ exec_always --no-startup-id picom -b
 
 # feh壁纸软件
 # 直接设置对应目录中的某一张图片作为壁纸
-exec_always --no-startup-id feh --bg-fill ~/Download/wallpaper/88b59ab3d3201318c7a71d2b6682aac4.jpeg
+exec_always --no-startup-id feh --bg-fill ~/Download/wallpaper/191f4a156c41c45d28104135af29f29c.jpg
 # 设置每次开机自动从对应目录选择一张图片作为壁纸
 # exec_always --no-startup-id feh --randomize --bg-fill 壁纸路径
 
