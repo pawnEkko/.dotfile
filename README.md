@@ -41,6 +41,13 @@ sudo pacman -S nodejs
 sudo pacman -S yarn
 sudo pacman -S rigrep
 ```
+4. zsh使用oh-my-zsh管理插件 使用以下代码下载需要的插件
+```
+# 历史记录建议
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# 代码高亮
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
 
 ## 会使用更多的软件做更多的更新
 
