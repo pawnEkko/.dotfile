@@ -37,3 +37,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+##############################
+#       语言开发环境变量     #
+##############################
+#
+#
+# go语言开发环境变量
+#export GOROOT=/usr/local/go
+#export GOPATH=$HOME/go
+#export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

@@ -92,7 +92,7 @@ return {
 			}
 		end,
 	},
-	{ "numToStr/Comment.nvim" },
+	-- 自动补全括号和引号
 	{
 		"windwp/nvim-autopairs",
 		config = function()
@@ -127,6 +127,13 @@ return {
 				return
 			end
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+		end,
+	},
+	-- gcc注释
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
 		end,
 	},
 }

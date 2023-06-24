@@ -232,3 +232,15 @@ return {
 		end,
 	},
 }
+
+-- mason中的各个语言的lsp服务选择(只是推荐)
+-- c/c++                      clangd
+-- golang                     gopls
+-- java                       jdtls
+-- python                     pyright
+-- lua                        lua-language-server
+-- vue                        vue-language-server
+-- angular                    angular-language-server
+-- html                       html-lsp
+-- javascript/typescript      typescript-language-server
+-- css                        css-lsp
