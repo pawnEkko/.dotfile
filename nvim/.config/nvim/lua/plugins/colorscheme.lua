@@ -1,26 +1,14 @@
 -- 主题设置
 return {
-	--------------使用lazyvim管理主题----------
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "catppuccin", --修改主题
-		},
-	},
-
 	---------------------主题----------------
 	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
 		opts = { style = "moon" },
-	},
-
-	-- OneDark
-	{
-		"olimorris/onedarkpro.nvim",
-		--onedark  onelight  onedark_vivid   onedark_dark 四色可选
-		lazy = true,
+    config = function ()
+      vim.cmd([[colorscheme tokyonight]])
+    end
 	},
 
 	-- gruvbox

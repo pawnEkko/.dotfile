@@ -43,8 +43,8 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 #
 #
-# # go语言开发环境变量
+# go语言开发环境变量
 # export GOROOT=/usr/local/go
 # export GOPATH=$HOME/go
 # export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-#
+

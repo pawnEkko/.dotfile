@@ -1,10 +1,8 @@
 -- leader 设置
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 -- 设置变量
 local opt = vim.opt
-
 --------------------------------------------个性化设置------------------------------
 opt.backup = false
 vim.cmd([[set iskeyword+=-]]) -- 辨认使用连接符号的单词

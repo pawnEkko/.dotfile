@@ -1,14 +1,13 @@
 require("config.options")
-require("config.autocmds")
-require("config.keymaps")
 
--- vim.api.nvim_create_autocmd("User", {
--- 	pattern = "VeryLazy",
--- 	callback = function()
--- 	end,
--- })
+vim.api.nvim_create_autocmd("User", {
+	pattern = "VeryLazy",
+	callback = function()
+		require("config.autocmds")
+		require("config.keymaps")
+	end,
+})
 
--- 关闭自动注释
 -------------------lazy插件包管理器-------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

@@ -12,6 +12,8 @@ return {
 				["<leader>b"] = { name = "Buffer(缓冲区操作)" },
 				["<leader>bb"] = { name = "切换到其他的buffer" },
 				["<leader>bc"] = { name = "选择一个buffer关闭" },
+        ["<leader>d"] = { name = "+debug" },
+        ["<leader>da"] = { name = "+adapters" },
 			},
 		},
 		config = function(_, opts)
