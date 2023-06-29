@@ -16,7 +16,7 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 		keys = {
-			{ "<leader>mm", "<cmd>MarkdownPreview<cr>", desc = "MarkdownPreview" },
+			{ "<leader>mm", "<cmd>MarkdownPreview<cr>", desc = "预览MarkDown" },
 		},
 	},
 }

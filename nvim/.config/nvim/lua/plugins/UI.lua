@@ -29,32 +29,19 @@ return {
 				require("lazy").load({ plugins = { "dressing.nvim" } })
 				return vim.ui.select(...)
 			end
-			-- vim.ui.input = function(...)
-			-- 	require("lazy").load({ plugins = { "dressing.nvim" } })
-			-- 	return vim.ui.input(...)
-			-- end
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
 		end,
 	},
 	-- bufferline
 	{
 		"akinsho/bufferline.nvim",
-		event = "VeryLazy",
 		opts = {
 			options = {
-				close_command = function(n)
-					require("mini.bufremove").delete(n, false)
-				end,
-				right_mouse_command = function(n)
-					require("mini.bufremove").delete(n, false)
-				end,
 				diagnostics = "nvim_lsp",
 				always_show_bufferline = false,
-				diagnostics_indicator = function(_, _, diag)
-					local icons = require("config").icons.diagnostics
-					local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-						.. (diag.warning and icons.Warn .. diag.warning or "")
-					return vim.trim(ret)
-				end,
 				offsets = {
 					{
 						filetype = "neo-tree",
@@ -70,33 +57,6 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
-		opts = function(_, opts)
-			local Util = require("lazyvim.util")
-			local colors = {
-				[""] = Util.fg("Special"),
-				["Normal"] = Util.fg("Special"),
-				["Warning"] = Util.fg("DiagnosticError"),
-				["InProgress"] = Util.fg("DiagnosticWarn"),
-			}
-			table.insert(opts.sections.lualine_x, 2, {
-				function()
-					local icon = require("lazyvim.config").icons.kinds.Copilot
-					local status = require("copilot.api").status.data
-					return icon .. (status.message or "")
-				end,
-				cond = function()
-					local ok, clients = pcall(vim.lsp.get_active_clients, { name = "copilot", bufnr = 0 })
-					return ok and #clients > 0
-				end,
-				color = function()
-					if not package.loaded["copilot"] then
-						return
-					end
-					local status = require("copilot.api").status.data
-					return colors[status.status] or colors[""]
-				end,
-			})
-		end,
 		opts = function()
 			local icons = require("config").icons
 			local Util = require("util")

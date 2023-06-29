@@ -62,14 +62,6 @@ return {
 				vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 			end
 
-			if opts.inlay_hints.enabled and vim.lsp.buf.inlay_hint then
-				Util.on_attach(function(client, buffer)
-					if client.server_capabilities.inlayHintProvider then
-						vim.lsp.buf.inlay_hint(buffer, true)
-					end
-				end)
-			end
-
 			if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
 				opts.diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
 					or function(diagnostic)
