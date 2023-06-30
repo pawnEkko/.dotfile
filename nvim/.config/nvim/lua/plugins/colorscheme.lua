@@ -4,22 +4,20 @@ return {
 	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
+		lazy = true,
 		opts = { style = "moon" },
-    config = function ()
-      vim.cmd([[colorscheme tokyonight]])
-    end
+		-- config = function ()
+		--   vim.cmd([[colorscheme tokyonight]])
+		-- end
 	},
 
-	-- gruvbox
-	{
-		"morhetz/gruvbox",
-		lazy = true,
-	},
 	{
 		"catppuccin/nvim",
-		lazy = true,
+		lazy = false,
 		name = "catppuccin",
+		config = function()
+			vim.cmd([[colorscheme catppuccin]])
+		end,
 		opts = {
 			integrations = {
 				alpha = true,

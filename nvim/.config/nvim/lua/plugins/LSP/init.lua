@@ -39,6 +39,7 @@ return {
 			servers = {
 				jsonls = {},
 				lua_ls = {
+					-- mason = false, -- set to false if you don't want this server to be installed with mason
 					settings = {
 						Lua = {
 							workspace = {
@@ -51,15 +52,33 @@ return {
 					},
 				},
 			},
-			setup = {},
+			setup = {
+				-- example to setup with typescript.nvim
+				-- tsserver = function(_, opts)
+				--   require("typescript").setup({ server = opts })
+				--   return true
+				-- end,
+				-- Specify * to use this function as a fallback for any server
+				-- ["*"] = function(server, opts) end,
+			},
 		},
 		config = function(_, opts)
 			local Util = require("util")
 			require("plugins.LSP.format").setup(opts)
-
+			Util.on_attach(function(client, buffer)
+				-- require("plugins.lsp.keymaps").on_attach(client, buffer)
+			end)
 			for name, icon in pairs(require("config").icons.diagnostics) do
 				name = "DiagnosticSign" .. name
 				vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+			end
+
+			if opts.inlay_hints.enabled and vim.lsp.buf.inlay_hint then
+				Util.on_attach(function(client, buffer)
+					if client.server_capabilities.inlayHintProvider then
+						vim.lsp.buf.inlay_hint(buffer, true)
+					end
+				end)
 			end
 
 			if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
@@ -148,21 +167,26 @@ return {
 					nls.builtins.diagnostics.fish,
 					nls.builtins.formatting.stylua,
 					nls.builtins.formatting.shfmt,
+					-- nls.builtins.diagnostics.flake8,
 				},
 			}
 		end,
 	},
+
 	-- cmdline tools and lsp servers
 	{
 
 		"williamboman/mason.nvim",
 		cmd = "Mason",
+		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
 		opts = {
 			ensure_installed = {
 				"stylua",
 				"shfmt",
+				-- "flake8",
 			},
 		},
+		---@param opts MasonSettings | {ensure_installed: string[]}
 		config = function(_, opts)
 			require("mason").setup(opts)
 			local mr = require("mason-registry")
