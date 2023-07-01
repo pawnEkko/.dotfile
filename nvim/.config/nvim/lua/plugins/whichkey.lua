@@ -10,7 +10,7 @@ return {
 				["["] = { name = "+prev" },
 				["<leader>b"] = { name = "Buffer(缓冲区操作)" },
 				["<leader>d"] = { name = "+debug" },
-				["<leader>f"] = { name = "Explore File" },
+				["<leader>f"] = { name = "查找文件" },
 				["<leader>m"] = { name = "Reverso Context" },
 				["<leader>q"] = { name = "自动会话管理" },
 			},

@@ -7,12 +7,12 @@ return {
 		cmd = "Telescope",
 		version = false, -- telescope did only one release, so use HEAD for now
 		keys = {
-			{ "<leader>fg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-			{ "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Explore Buffers" },
-			{ "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
-			{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-			{ "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+			{ "<leader>fg", Util.telescope("live_grep"), desc = "按字符查找(root dir)" },
+			{ "<leader><space>", Util.telescope("files"), desc = "查找文件(root dir)" },
+			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "查找buffer" },
+			{ "<leader>ff", Util.telescope("files"), desc = "查找文件 (root dir)" },
+			{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "查找历史文件" },
+			{ "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "查找历史文件(cwd)" },
 		},
 	},
 }
