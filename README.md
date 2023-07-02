@@ -38,6 +38,7 @@ sudo pacman -S yarn
 sudo pacman -S rigrep
 ```
 ## zsh
+> 安装完zsh之后记得在终端中更改默认shell为zsh：`chsh -s /bin/zsh`
 
 1. 安装oh-my-zsh
 
