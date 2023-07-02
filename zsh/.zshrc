@@ -22,6 +22,10 @@ alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
 alias lcat='lolcat'
+alias tmuxk='tmux kill-session -t'
+alias tmuxs='tmux switch -t'
+alias tmuxa='tmux attach -t'
+alias tmuxn='tmux new -s'
 
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
