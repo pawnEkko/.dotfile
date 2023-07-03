@@ -10,9 +10,9 @@
 ####################
 #     控制键       #
 #################### 
-# Mod4 为 win 键--------主控制键
+# 将Mod4 设置为 Mod 键---Win键-----主控制键
 set $mod Mod4
-# Mod1 为 Alt 键--------副控制键
+# 将Mod1 设置为 Mod1 键---Alt键-----辅助制键
 set $mod1 Mod1
 
 
@@ -145,7 +145,7 @@ bindsym $mod1+h workspace prev
 bindsym $mod1+l workspace next
 
 bindsym $mod1+Right workspace next
-bindsym $mod1++Left workspace prev
+bindsym $mod1+Left workspace prev
 
 
 ###################
