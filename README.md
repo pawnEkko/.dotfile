@@ -67,12 +67,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 rofi-theme-selector
 ```
 ## tmux
-1. 在终端中使用以下指令下载tmux的插件管理器
-```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-2. 在终端中使用`source ~/.tmux.conf`命令加载配置文件
-3. 进入**tmux**中使用`prefix`+`I`来安装插件
+在终端中使用`source ~/.tmux.conf`命令加载配置文件
 
 
 ## 会使用更多的软件做更多的更新

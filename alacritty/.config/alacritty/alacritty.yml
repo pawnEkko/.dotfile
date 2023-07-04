@@ -21,7 +21,15 @@ font:
 #关闭title bar
 window:
   decorations: "none"
-
+  dimensions:
+    columns: 120
+    lines: 35
+  dynamic_padding: true
+  dynamic_title: true
+  decorations: Full
+  option_as_alt: Both
+  startup_mode: Windowed
+  resize_increments: true
 
 #主题
 colors:

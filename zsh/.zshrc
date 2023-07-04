@@ -25,6 +25,7 @@ alias lcat='lolcat'
 alias tmuxk='tmux kill-session -t'
 alias tmuxs='tmux switch -t'
 alias tmuxa='tmux attach -t'
+alias tmuxs='tmux switch -t'
 alias tmuxn='tmux new -s'
 alias tmuxl='tmux ls'
 
