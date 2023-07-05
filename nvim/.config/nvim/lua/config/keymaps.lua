@@ -21,7 +21,6 @@ map("i", "ii", "<Esc>", { desc = "返回普通模式" })
 map("n", "<leader>mh", ":nohl<CR>", { desc = "取消高亮" })
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy插件管理器" })
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "创建新文件" })
-map("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File" })
 
 -- 多行移动
 map("v", "<A-j>", ":m '>+1<CR>gv=gv")
