@@ -3,7 +3,7 @@ live_config_reload: true
 
 
 font:
-  size: 10
+  size: 8
  
   normal:
     family: Monaco

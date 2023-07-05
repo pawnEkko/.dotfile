@@ -20,6 +20,9 @@ map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>")
 map("i", "ii", "<Esc>", { desc = "返回普通模式" })
 map("n", "<leader>mh", ":nohl<CR>", { desc = "取消高亮" })
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy插件管理器" })
+map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "创建新文件" })
+map("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File" })
+
 -- 多行移动
 map("v", "<A-j>", ":m '>+1<CR>gv=gv")
 map("v", "<A-k>", ":m '<-2<CR>gv=gv")
@@ -31,8 +34,8 @@ map("n", "<A-j>", ":m .+1<CR>==") -- 向下移动
 --窗口操作
 map("n", "<C-w>s", "<C-w>s", { desc = "垂直创建窗口" })
 map("n", "<C-w>v", "<C-w>v", { desc = "水平创建窗口" })
-map("n", "so", "<C-w>o", { desc = "关闭所有其他窗口" })
-map("n", "sq", "<C-w>q", { desc = "关闭当前窗口" })
+map("n", "<C-w>o", "<C-w>o", { desc = "关闭所有其他窗口" })
+map("n", "<C-w>q", "<C-w>q", { desc = "关闭当前窗口" })
 map("n", "sh", ":vertical resize -20<CR>", { desc = "窗口大小水平减少" })
 map("n", "sl", ":vertical resize +20<CR>", { desc = "窗口大小水平增加" })
 map("n", "sj", ":resize +10<CR>", { desc = "窗口大小垂直增加" })

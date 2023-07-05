@@ -6,21 +6,23 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
-				"<leader>fe",
+				"<leader>e",
 				function()
 					require("neo-tree.command").execute({ toggle = true, dir = require("util").get_root() })
 				end,
-				desc = "Explorer NeoTree (root dir)",
+				desc = "浏览目录树 (root dir)",
+				remap = true,
 			},
 			{
-				"<leader>fE",
+				"<leader>E",
 				function()
 					require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
 				end,
-				desc = "Explorer NeoTree (cwd)",
+				desc = "浏览目录树 (cwd)",
+				remap = true,
 			},
-			{ "<leader>e", "<leader>fe", desc = "浏览目录树 (root dir)", remap = true },
-			{ "<leader>E", "<leader>fE", desc = "浏览目录树 (cwd)", remap = true },
+			-- { "<leader>e", "<leader>fe", desc = "浏览目录树 (root dir)", remap = true },
+			-- { "<leader>E", "<leader>fE", desc = "浏览目录树 (cwd)", remap = true },
 		},
 		deactivate = function()
 			vim.cmd([[Neotree close]])
