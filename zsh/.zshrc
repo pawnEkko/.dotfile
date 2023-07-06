@@ -45,6 +45,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+########################
+#  一些普通的环境变量  #
+########################
+export TERM='tmux-256color'
+export EDITOR='nvim'
+export VISUAL='nvim'
+
 ##############################
 #       语言开发环境变量     #
 ##############################

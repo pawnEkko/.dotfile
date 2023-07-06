@@ -8,4 +8,11 @@ vim.api.nvim_create_autocmd("User", {
 		require("config.keymaps")
 	end,
 })
-vim.cmd([[colorscheme tokyonight]])
+
+-- 主题选择
+-- 可供选择的主题：
+-- gruvbox
+-- catppuccin
+-- tokyonight-night >>> tokyonight-moon >>> tokyonight-storm
+-- everforest
+vim.cmd([[colorscheme everforest]])

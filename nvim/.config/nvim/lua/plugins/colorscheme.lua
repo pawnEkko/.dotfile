@@ -1,23 +1,31 @@
 -- 主题设置
 return {
 	---------------------主题----------------
-	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		opts = { style = "moon" },
+		lazy = true,
 		-- config = function()
 		-- 	vim.cmd([[colorscheme tokyonight]])
 		-- end,
 	},
-
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = true,
+		-- config = function()
+		-- 	vim.cmd([[colorscheme gruvbox]])
+		-- end,
+	},
+	{
+		"sainnhe/everforest",
+		lazy = true,
+	},
 	{
 		"catppuccin/nvim",
 		lazy = true,
 		name = "catppuccin",
-		config = function()
-			vim.cmd([[colorscheme catppuccin]])
-		end,
+		-- config = function()
+		-- 	vim.cmd([[colorscheme catppuccin]])
+		-- end,
 		opts = {
 			integrations = {
 				alpha = true,
