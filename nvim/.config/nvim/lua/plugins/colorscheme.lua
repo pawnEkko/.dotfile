@@ -4,16 +4,16 @@ return {
 	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
 		opts = { style = "moon" },
-		-- config = function ()
-		--   vim.cmd([[colorscheme tokyonight]])
-		-- end
+		-- config = function()
+		-- 	vim.cmd([[colorscheme tokyonight]])
+		-- end,
 	},
 
 	{
 		"catppuccin/nvim",
-		lazy = false,
+		lazy = true,
 		name = "catppuccin",
 		config = function()
 			vim.cmd([[colorscheme catppuccin]])

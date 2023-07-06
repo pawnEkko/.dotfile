@@ -22,6 +22,10 @@ map("n", "<leader>mh", ":nohl<CR>", { desc = "取消高亮" })
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy插件管理器" })
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "创建新文件" })
 
+-- 终端插件
+map("n", "<leader>mT", "<cmd>:ToggleTerm size=8 direction=float<cr>", { desc = "打开一个浮动终端" })
+map("n", "<leader>mt", "<cmd>:ToggleTerm size=8 direction=horizontal<cr>", { desc = "打开一个水平终端" })
+
 -- 多行移动
 map("v", "<A-j>", ":m '>+1<CR>gv=gv")
 map("v", "<A-k>", ":m '<-2<CR>gv=gv")
