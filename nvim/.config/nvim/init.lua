@@ -15,4 +15,4 @@ vim.api.nvim_create_autocmd("User", {
 -- catppuccin
 -- tokyonight-night >>> tokyonight-moon >>> tokyonight-storm
 -- everforest
-vim.cmd([[colorscheme everforest]])
+vim.cmd([[colorscheme gruvbox]])
