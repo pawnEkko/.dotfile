@@ -3,19 +3,68 @@ live_config_reload: true
 
 
 font:
-  size: 8
- 
+  # size: 8
+
+  #字体：
+  # 先下载对应字体再来释放配置
+  #
+  #
+  #
+
+
+  # jetbrains-mono
+  #
+  # paru -S ttf-jetbrains-mono
+  ##################
   normal:
-    family: Monaco
+    family: JetBrainsMono
     style: Regular
- 
+
   bold:
-    family: Monaco
+    family: JetBrainsMono
     style: Bold
- 
+
   italic:
-    family: Monaco
+    family: JetBrainsMono
     style: italic
+  size: 7.6
+
+
+  # Hack
+  #
+  # paru -S ttf-hack
+  ##################
+  # normal:
+  #   family: Hack
+  #   style: Regular
+  #
+  # bold:
+  #   family: Hack
+  #   style: Bold
+  #
+  # italic:
+  #   family: Hack
+  #   style: italic
+  # size: 8.5
+
+
+  # Monaco
+  #
+  # paru -S ttf-Monaco
+  #################
+  # normal:
+  #   family: Monaco
+  #   style: Regular
+  #
+  # bold:
+  #   family: Monaco
+  #   style: Bold
+  #
+  # italic:
+  #   family: Monaco
+  #   style: italic
+  # size: 8
+
 
 
 #关闭title bar
