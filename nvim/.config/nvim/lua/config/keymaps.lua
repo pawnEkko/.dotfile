@@ -46,11 +46,11 @@ map("n", "sk", ":resize -10<CR>", { desc = "窗口大小垂直减少" })
 
 -- buffer操作
 if Util.has("bufferline.nvim") then
-	map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "切换到左边buffer" })
-	map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "切换到右边buffer" })
+	map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "切换到左边buffer" })
+	map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "切换到右边buffer" })
 else
-	map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "切换到左边buffer" })
-	map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "切换到右边buffer" })
+	map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "切换到左边buffer" })
+	map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "切换到右边buffer" })
 end
 map("n", "<leader>bq", ":bdelete %<CR>", { desc = "关闭当前buffer" })
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", { desc = "关闭左边所有buffer" })
@@ -60,5 +60,5 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", { desc = "选择一个buffer�
 -- 快速移动
 map({ "n", "v" }, "<S-j>", "8j", { desc = "向下移动8行" })
 map({ "n", "v" }, "<S-k>", "8k", { desc = "向上移动8行" })
-map({ "n", "v" }, "<S-b>", "0", { desc = "移动到行首" })
-map({ "n", "v" }, "<S-e>", "$", { desc = "移动到行尾" })
+map({ "n", "v" }, "<S-h>", "0", { desc = "移动到行首" })
+map({ "n", "v" }, "<S-l>", "$", { desc = "移动到行尾" })
