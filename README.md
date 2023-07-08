@@ -8,6 +8,7 @@
 
 ## 目录
 * [stow](#stow)
+* [字体](#字体)
 * [polybar](#polybar)
 * [neovim](#neovim)
 * [zsh](#zsh)
@@ -25,6 +26,23 @@ sudo pacman -S stow
 stow i3wm
 ```
 > stow管理的是软连接所以，同步之后应该在源文件的位置也就是``.dotfile``中修改配置文件
+
+## 字体
+> 配置文件中使用了以下字体先安装字体，否则会造成显示错误，虽然不影响性能，但是比较丑，
+
+```
+# 终端字体
+paru -S ttf-jetbrains-mono
+paru -S ttf-monaco
+paru -S ttf-hack
+#
+# polybar使用的字体
+sudo pacman -S otf-font-awesome
+yay -S ttf-font-awesome-5
+#
+# zsh主题使用的图标字体
+yay -S ttf-meslo-nerd-font-powerlevel10k
+```
 ## polybar
 2. polybar的配置中``lauch.sh``这个执行文件应该需要执权限才可以被i3调用，使用以下指令：
 ```
