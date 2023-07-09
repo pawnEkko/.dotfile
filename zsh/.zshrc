@@ -51,6 +51,7 @@ source $ZSH/oh-my-zsh.sh
 export TERM='tmux-256color'
 export EDITOR='nvim'
 export VISUAL='nvim'
+export LANGUAGE="zh_CN:UTF-8"
 
 ##############################
 #       语言开发环境变量     #
