@@ -6,7 +6,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
-				"<leader>e",
+				"<leader>E",
 				function()
 					require("neo-tree.command").execute({ toggle = true, dir = require("util").get_root() })
 				end,
@@ -14,7 +14,7 @@ return {
 				remap = true,
 			},
 			{
-				"<leader>E",
+				"<leader>e",
 				function()
 					require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
 				end,

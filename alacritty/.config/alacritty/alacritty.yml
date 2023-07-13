@@ -1,21 +1,19 @@
-# 实时重载配置文件，不用重启测试配置选项
-live_config_reload: true
-
-
+###################
+#       字体      #
+###################
 font:
-  # size: 8
 
-  #字体：
+  # # # #
   # 先下载对应字体再来释放配置
-  #
-  #
-  #
+  # # # #
 
 
-  # jetbrains-mono
-  #
-  # paru -S ttf-jetbrains-mono
-  ##################
+
+  # jetbrains-mono# # # # # # # #
+  #                             #
+  # paru -S ttf-jetbrains-mono  #
+  # # # # # # # # # # # # # # # #
+
   normal:
     family: JetBrainsMono
     style: Regular
@@ -30,10 +28,11 @@ font:
   size: 7.6
 
 
-  # Hack
-  #
-  # paru -S ttf-hack
-  ##################
+  # Hack# # # # # # # # # #
+  #                       #
+  # paru -S ttf-hack      #
+  # # # # # # # # # # # # #
+
   # normal:
   #   family: Hack
   #   style: Regular
@@ -48,10 +47,11 @@ font:
   # size: 8.5
 
 
-  # Monaco
-  #
-  # paru -S ttf-Monaco
-  #################
+  # Monaco # # # # # # # #
+  #                      #
+  # paru -S ttf-Monaco   #
+  # # # # # # # # # # #  # 
+
   # normal:
   #   family: Monaco
   #   style: Regular
@@ -66,8 +66,9 @@ font:
   # size: 8
 
 
-
-#关闭title bar
+###################
+#   关闭title bar #
+###################
 window:
   decorations: "none"
   dimensions:
@@ -80,7 +81,9 @@ window:
   startup_mode: Windowed
   resize_increments: true
 
-#主题
+################
+#     主题     #
+################
 colors:
   bright:
     black: '#333333'
@@ -109,3 +112,6 @@ colors:
   selection:
     background: '#4e5a65'
     text: '#d8dee9'
+
+# 实时重载配置文件，不用重启测试配置选项
+live_config_reload: true
