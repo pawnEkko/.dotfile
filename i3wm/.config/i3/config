@@ -180,13 +180,11 @@ bindsym $mod+0 workspace number $ws10
 ##########
 # 设置窗口边框
 default_border pixel 0
-default_floating_border pixel 1
-new_window pixel 0
-new_float pixel 0
+default_floating_border pixel 0
 hide_edge_borders both
 # 设置窗口间距
-gaps inner 6
-gaps outer 3
+gaps inner 3
+gaps outer 0
 
 
 ##############

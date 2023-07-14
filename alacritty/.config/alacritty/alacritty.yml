@@ -10,45 +10,42 @@ font:
 
 
   # jetbrains-mono# # # # # # # #
-  #                             #
   # paru -S ttf-jetbrains-mono  #
   # # # # # # # # # # # # # # # #
 
-  normal:
-    family: JetBrainsMono
-    style: Regular
-
-  bold:
-    family: JetBrainsMono
-    style: Bold
-
-  italic:
-    family: JetBrainsMono
-    style: italic
-  size: 7.6
-
-
-  # Hack# # # # # # # # # #
-  #                       #
-  # paru -S ttf-hack      #
-  # # # # # # # # # # # # #
-
   # normal:
-  #   family: Hack
+  #   family: JetBrainsMono
   #   style: Regular
   #
   # bold:
-  #   family: Hack
+  #   family: JetBrainsMono
   #   style: Bold
   #
   # italic:
-  #   family: Hack
+  #   family: JetBrainsMono
   #   style: italic
-  # size: 8.5
+  # size: 7.6
+
+
+  # Hack# # # # # # # # # #
+  # paru -S ttf-hack      #
+  # # # # # # # # # # # # #
+
+  normal:
+    family: Hack
+    style: Regular
+
+  bold:
+    family: Hack
+    style: Bold
+
+  italic:
+    family: Hack
+    style: italic
+  size: 8.5
 
 
   # Monaco # # # # # # # #
-  #                      #
   # paru -S ttf-Monaco   #
   # # # # # # # # # # #  # 
 
@@ -67,19 +64,17 @@ font:
 
 
 ###################
-#   关闭title bar #
+#   窗口设置      #
 ###################
 window:
   decorations: "none"
   dimensions:
-    columns: 120
-    lines: 35
+    columns: 300
+    lines: 40
+  padding:
+    x: 0
+    y: 0
   dynamic_padding: true
-  dynamic_title: true
-  decorations: Full
-  option_as_alt: Both
-  startup_mode: Windowed
-  resize_increments: true
 
 ################
 #     主题     #
@@ -113,5 +108,7 @@ colors:
     background: '#4e5a65'
     text: '#d8dee9'
 
+scrolling:
+  history: 10000
 # 实时重载配置文件，不用重启测试配置选项
 live_config_reload: true
