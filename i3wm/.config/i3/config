@@ -183,7 +183,7 @@ default_border pixel 0
 default_floating_border pixel 0
 hide_edge_borders both
 # 设置窗口间距
-gaps inner 3
+gaps inner 4
 gaps outer 0
 
 
