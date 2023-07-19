@@ -94,8 +94,20 @@ return {
 				},
 				sections = {
 					lualine_a = { "mode" },
-					lualine_b = { "branch" },
+					lualine_b = {
+						"branch",
+						{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+						{ "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+					},
 					lualine_c = {
+						{
+							"diff",
+							symbols = {
+								added = icons.git.added,
+								modified = icons.git.modified,
+								removed = icons.git.removed,
+							},
+						},
 						{
 							"diagnostics",
 							symbols = {
@@ -105,8 +117,6 @@ return {
 								hint = icons.diagnostics.Hint,
 							},
 						},
-						{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-						{ "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
 						{
 							function()
 								return require("nvim-navic").get_location()
@@ -144,16 +154,9 @@ return {
 							end,
 							color = Util.fg("Debug"),
 						},
-						{
-							"diff",
-							symbols = {
-								added = icons.git.added,
-								modified = icons.git.modified,
-								removed = icons.git.removed,
-							},
-						},
 					},
 					lualine_y = {
+						{ "encoding" },
 						{ "progress", separator = " ", padding = { left = 1, right = 0 } },
 						{ "location", padding = { left = 0, right = 1 } },
 					},
