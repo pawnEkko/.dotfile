@@ -1,6 +1,6 @@
 local M = {}
+-- saga.init_lsp_saga()
 
----@type PluginLspKeys
 M._keys = nil
 
 ---@return (LazyKeys|{has?:string})[]
@@ -11,19 +11,29 @@ function M.get()
 	if not M._keys then
   ---@class PluginLspKeys
     -- stylua: ignore
-    M._keys =  {
-      { "]d", M.diagnostic_goto(true), desc = "下一个诊断" },
-      { "[d", M.diagnostic_goto(false), desc = "上一个诊断" },
-      { "]e", M.diagnostic_goto(true, "ERROR"), desc = "下一个错误" },
-      { "[e", M.diagnostic_goto(false, "ERROR"), desc = "上一个错误" },
-      { "]w", M.diagnostic_goto(true, "WARN"), desc = "下一个警告" },
-      { "[w", M.diagnostic_goto(false, "WARN"), desc = "上一个警告" },
-      { "<leader>ck", '<cmd>Lspsaga hover_doc<cr>', desc = "查看信息" },
-      { "<leader>cf", format, desc = "格式化文件", has = "formatting" },
-      { "<leader>cf", format, desc = "区域格式化", mode = "v", has = "rangeFormatting" },
-      { "<leader>cr", "<cmd>Lspsaga rename ++project<cr>", desc = "重命名", has = "rename" },
-      { "<leader>ca", "<cmd>Lspsaga code_action<cr>", desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
-    }
+		M._keys = {
+      { "<leader>cj", "<cmd>Lspsaga goto_definition<cr>", desc = "Goto Definition", has = "definition" },
+      { "<leader>cJ", "<cmd>Lspsaga goto_type_definition<cr>", desc = "Goto T[y]pe Definition", has = "definition" },
+			{ "<leader>cn", "<cmd>Lspsaga diagnostic_jump_prev<cr>", desc = "跳转到下一个提醒" },
+      { "<leader>cz", "<cmd>Lspsaga show_workspace_diagnostics ++float<cr>", desc = "查看当前工作所有提醒" },
+			{ "<leader>ck", "<cmd>Lspsaga hover_doc<cr>", mode = { "n", "v" }, desc = "查看信息" },
+			{ "<leader>cf", format, desc = "格式化文件", has = "formatting" },
+			{ "<leader>cf", format, desc = "区域格式化", mode = "v", has = "rangeFormatting" },
+			{
+				"<leader>cr",
+				"<cmd>Lspsaga rename ++project<cr>",
+				desc = "重命名",
+				mode = { "n", "v" },
+				has = "rename",
+			},
+			{
+				"<leader>ca",
+				"<cmd>Lspsaga code_action<cr>",
+				desc = "Code Action",
+				mode = { "n", "v" },
+				has = "codeAction",
+			},
+		}
 	end
 	return M._keys
 end

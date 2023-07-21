@@ -141,7 +141,7 @@ return {
 	-- notify
 	{
 		"rcarriga/nvim-notify",
-		enabled = false,
+		enabled = true,
 		opts = {
 			timeout = 3000,
 			max_height = function()
@@ -164,7 +164,7 @@ return {
 	-- noice
 	{
 		"folke/noice.nvim",
-		enabled = false,
+		enabled = ture,
 		event = "VeryLazy",
 		opts = {
 			lsp = {

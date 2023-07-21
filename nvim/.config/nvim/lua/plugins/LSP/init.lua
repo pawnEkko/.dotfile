@@ -14,12 +14,6 @@ return {
 					return require("util").has("nvim-cmp")
 				end,
 			},
-			{
-				"nvimdev/lspsaga.nvim",
-				config = function()
-					require("lspsaga").setup()
-				end,
-			},
 		},
 		opts = {
 			diagnostics = {
@@ -156,6 +150,18 @@ return {
 					return not is_deno(root_dir)
 				end)
 			end
+		end,
+	},
+
+	-- lspsaga
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({
+				diagnostic = {
+					show_code_action = false, -- 跳转到提醒时是否打开‘Code Action’
+				},
+			})
 		end,
 	},
 

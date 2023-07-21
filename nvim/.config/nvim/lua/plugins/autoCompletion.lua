@@ -57,10 +57,8 @@ return {
 						},
 					})
 
-					-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 					local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-					-- The following example advertise capabilities to `clangd`.
 					require("lspconfig").clangd.setup({
 						capabilities = capabilities,
 					})
@@ -80,6 +78,9 @@ return {
 				},
 				window = {
 					documentation = false,
+					completion = cmp.config.window.bordered({
+						winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+					}),
 				},
 				snippet = {
 					expand = function(args)
