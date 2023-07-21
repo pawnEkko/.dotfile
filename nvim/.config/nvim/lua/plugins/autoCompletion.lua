@@ -49,6 +49,7 @@ return {
 		dependencies = {
 			{
 				"hrsh7th/cmp-nvim-lsp",
+				enabled = true,
 				config = function()
 					require("cmp").setup({
 						sources = {

@@ -13,6 +13,7 @@ return {
 				["<leader>f"] = { name = "查找文件" },
 				["<leader>m"] = { name = "Reverso Context" },
 				["<leader>q"] = { name = "自动会话管理" },
+				["<leader>c"] = { name = "语法操作" },
 			},
 		},
 		config = function(_, opts)

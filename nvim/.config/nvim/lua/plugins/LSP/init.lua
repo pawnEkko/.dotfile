@@ -14,6 +14,12 @@ return {
 					return require("util").has("nvim-cmp")
 				end,
 			},
+			{
+				"nvimdev/lspsaga.nvim",
+				config = function()
+					require("lspsaga").setup()
+				end,
+			},
 		},
 		opts = {
 			diagnostics = {
@@ -66,7 +72,7 @@ return {
 			local Util = require("util")
 			require("plugins.LSP.format").setup(opts)
 			Util.on_attach(function(client, buffer)
-				-- require("plugins.lsp.keymaps").on_attach(client, buffer)
+				require("plugins.LSP.keymaps").on_attach(client, buffer)
 			end)
 			for name, icon in pairs(require("config").icons.diagnostics) do
 				name = "DiagnosticSign" .. name
