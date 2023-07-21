@@ -232,7 +232,7 @@ exec_always --no-startup-id picom -b
 # https://bz.zzzmh.cn/index
 # https://pic.netbian.com/new/
 # 直接设置对应目录中的某一张图片作为壁纸
-exec_always --no-startup-id feh --bg-fill ~/Download/wallpaper/default.jpg
+exec_always --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper/default.jpg
 # 设置每次开机自动从对应目录选择一张图片作为壁纸
 # exec_always --no-startup-id feh --randomize --bg-fill 壁纸路径
 
