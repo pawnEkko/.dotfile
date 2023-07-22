@@ -20,12 +20,45 @@ return {
 		},
 	},
 
+	-- barbecue
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			{
+				"SmiteshP/nvim-navic",
+				lazy = true,
+				init = function()
+					vim.g.navic_silence = true
+					require("util").on_attach(function(client, buffer)
+						if client.server_capabilities.documentSymbolProvider then
+							require("nvim-navic").attach(client, buffer)
+						end
+					end)
+				end,
+				opts = function()
+					return {
+						separator = " ",
+						highlight = true,
+						depth_limit = 5,
+						icons = require("config").icons.kinds,
+					}
+				end,
+			},
+		},
+		config = function()
+			require("barbecue").setup({
+				theme = "auto",
+			})
+		end,
+	},
+
 	-- lualine
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
 		opts = function()
-			local icons = require("config").icons
 			return {
 				options = {
 					theme = "auto",
@@ -41,21 +74,21 @@ return {
 						{
 							"diff",
 							symbols = {
-								added = icons.git.added,
-								modified = icons.git.modified,
-								removed = icons.git.removed,
+								added = " ",
+								modified = " ",
+								removed = " ",
 							},
 						},
 					},
 					lualine_c = {
-						{ "filename", path = 1, symbols = { readonly = "", unnamed = "" } },
+						{ "filename", path = 0, symbols = { readonly = "", unnamed = "" } },
 						{
 							"diagnostics",
 							symbols = {
-								error = icons.diagnostics.Error,
-								warn = icons.diagnostics.Warn,
-								info = icons.diagnostics.Info,
-								hint = icons.diagnostics.Hint,
+                Error = " ",
+                Warn = " ",
+                Hint = " ",
+                Info = " ",
 							},
 						},
 					},
@@ -141,7 +174,7 @@ return {
 	-- notify
 	{
 		"rcarriga/nvim-notify",
-		enabled = false,
+		enabled = true,
 		opts = {
 			timeout = 3000,
 			max_height = function()
@@ -164,7 +197,7 @@ return {
 	-- noice
 	{
 		"folke/noice.nvim",
-		enabled = false,
+		enabled = true,
 		event = "VeryLazy",
 		opts = {
 			lsp = {

@@ -1,5 +1,8 @@
 return {
-	{ "iamcco/mathjax-support-for-mkdp" },
+	{
+		"ellisonleao/glow.nvim",
+		config = true,
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		config = function()

@@ -41,29 +41,14 @@ return {
 			},
 		},
 	},
-	-- auto completion
+
+	-- cmp
 	{
 		"hrsh7th/nvim-cmp",
-		version = false, -- last release is way too old
+		version = false,
 		event = "InsertEnter",
 		dependencies = {
-			{
-				"hrsh7th/cmp-nvim-lsp",
-				enabled = true,
-				config = function()
-					require("cmp").setup({
-						sources = {
-							{ name = "nvim_lsp" },
-						},
-					})
-
-					local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-					require("lspconfig").clangd.setup({
-						capabilities = capabilities,
-					})
-				end,
-			},
+			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
@@ -94,11 +79,11 @@ return {
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<S-CR>"] = cmp.mapping.confirm({
 						behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
-					}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					}),
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
@@ -124,57 +109,18 @@ return {
 			}
 		end,
 	},
+
 	-- auto pairs
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
 		opts = {},
 	},
-	-- surround
-	-- {
-	-- 	"echasnovski/mini.surround",
-	-- 	keys = function(_, keys)
-	-- 		-- Populate the keys based on the user's options
-	-- 		local plugin = require("lazy.core.config").spec.plugins["mini.surround"]
-	-- 		local opts = require("lazy.core.plugin").values(plugin, "opts", false)
-	-- 		local mappings = {
-	-- 			{ opts.mappings.add, desc = "Add surrounding", mode = { "n", "v" } },
-	-- 			{ opts.mappings.delete, desc = "Delete surrounding" },
-	-- 			{ opts.mappings.find, desc = "Find right surrounding" },
-	-- 			{ opts.mappings.find_left, desc = "Find left surrounding" },
-	-- 			{ opts.mappings.highlight, desc = "Highlight surrounding" },
-	-- 			{ opts.mappings.replace, desc = "Replace surrounding" },
-	-- 			{ opts.mappings.update_n_lines, desc = "Update `MiniSurround.config.n_lines`" },
-	-- 		}
-	-- 		mappings = vim.tbl_filter(function(m)
-	-- 			return m[1] and #m[1] > 0
-	-- 		end, mappings)
-	-- 		return vim.list_extend(mappings, keys)
-	-- 	end,
-	-- 	opts = {
-	-- 		mappings = {
-	-- 			add = "gza", -- Add surrounding in Normal and Visual modes
-	-- 			delete = "gzd", -- Delete surrounding
-	-- 			find = "gzf", -- Find surrounding (to the right)
-	-- 			find_left = "gzF", -- Find surrounding (to the left)
-	-- 			highlight = "gzh", -- Highlight surrounding
-	-- 			replace = "gzr", -- Replace surrounding
-	-- 			update_n_lines = "gzn", -- Update `n_lines`
-	-- 		},
-	-- 	},
-	-- },
-	-- comments
-	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+	-- Comment
 	{
-		"echasnovski/mini.comment",
-		event = "VeryLazy",
-		opts = {
-			options = {
-				custom_commentstring = function()
-					return require("ts_context_commentstring.internal").calculate_commentstring()
-						or vim.bo.commentstring
-				end,
-			},
-		},
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
 	},
 }

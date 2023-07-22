@@ -21,8 +21,6 @@ return {
 				desc = "浏览目录树 (cwd)",
 				remap = true,
 			},
-			-- { "<leader>e", "<leader>fe", desc = "浏览目录树 (root dir)", remap = true },
-			-- { "<leader>E", "<leader>fE", desc = "浏览目录树 (cwd)", remap = true },
 		},
 		deactivate = function()
 			vim.cmd([[Neotree close]])
@@ -42,7 +40,7 @@ return {
 			},
 			default_component_configs = {
 				indent = {
-					with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+					with_expanders = true,
 					expander_collapsed = "",
 					expander_expanded = "",
 					expander_highlight = "NeoTreeExpander",

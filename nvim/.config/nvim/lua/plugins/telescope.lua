@@ -5,7 +5,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		commit = vim.fn.has("nvim-0.9.0") == 0 and "057ee0f8783" or nil,
 		cmd = "Telescope",
-		version = false, -- telescope did only one release, so use HEAD for now
+		version = false,
 		keys = {
 			{ "<leader>fg", Util.telescope("live_grep"), desc = "按字符查找(root dir)" },
 			{ "<leader><space>", Util.telescope("files"), desc = "查找文件(root dir)" },

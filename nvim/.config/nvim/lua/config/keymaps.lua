@@ -1,6 +1,6 @@
 local function map(mode, lhs, rhs, opts)
 	local keys = require("lazy.core.handler").handlers.keys
-	---@cast keys LazyKeysHandler
+	-- @cast keys LazyKeysHandler
 	-- do not create the keymap if a lazy keys handler exists
 	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
 		opts = opts or {}
@@ -58,7 +58,7 @@ map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", { desc = "关闭右边所有b
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", { desc = "选择一个buffer关闭" })
 
 -- 快速移动
-map({ "n", "v" }, "<S-j>", "8j", { desc = "向下移动8行" })
-map({ "n", "v" }, "<S-k>", "8k", { desc = "向上移动8行" })
+map({ "n", "v" }, "<S-j>", "10j", { desc = "向下移动8行" })
+map({ "n", "v" }, "<S-k>", "10k", { desc = "向上移动8行" })
 map({ "n", "v" }, "<S-h>", "0", { desc = "移动到行首" })
 map({ "n", "v" }, "<S-l>", "$", { desc = "移动到行尾" })

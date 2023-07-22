@@ -39,7 +39,6 @@ return {
 			servers = {
 				jsonls = {},
 				lua_ls = {
-					-- mason = false, -- set to false if you don't want this server to be installed with mason
 					settings = {
 						Lua = {
 							workspace = {
@@ -64,9 +63,9 @@ return {
 		},
 		config = function(_, opts)
 			local Util = require("util")
-			require("plugins.LSP.format").setup(opts)
+			require("plugins.lsp.format").setup(opts)
 			Util.on_attach(function(client, buffer)
-				require("plugins.LSP.keymaps").on_attach(client, buffer)
+				require("plugins.lsp.keymaps").on_attach(client, buffer)
 			end)
 			for name, icon in pairs(require("config").icons.diagnostics) do
 				name = "DiagnosticSign" .. name
@@ -96,13 +95,13 @@ return {
 			vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
 			local servers = opts.servers
-			-- local capabilities = vim.tbl_deep_extend(
-			-- 	"force",
-			-- 	{},
-			-- 	vim.lsp.protocol.make_client_capabilities(),
-			-- 	require("cmp_nvim_lsp").default_capabilities(),
-			-- 	opts.capabilities or {}
-			-- )
+			local capabilities = vim.tbl_deep_extend(
+				"force",
+				{},
+				vim.lsp.protocol.make_client_capabilities(),
+				require("cmp_nvim_lsp").default_capabilities(),
+				opts.capabilities or {}
+			)
 
 			local function setup(server)
 				local server_opts = vim.tbl_deep_extend("force", {
@@ -170,8 +169,9 @@ return {
 		"jose-elias-alvarez/null-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "mason.nvim" },
-		opts = function()
+		opts = function(_, opts)
 			local nls = require("null-ls")
+			table.insert(nls.builtins.formatting.prettierd, opts.sources)
 			return {
 				root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
 				sources = {
@@ -194,6 +194,7 @@ return {
 			ensure_installed = {
 				"stylua",
 				"shfmt",
+				"prettierd",
 				-- "flake8",
 			},
 		},
