@@ -14,7 +14,7 @@ opt.clipboard:append("unnamedplus") -- 启用系统剪贴板
 opt.updatetime = 50 --触发时间
 opt.wildmenu = true
 opt.number = true -- 启用行号
-opt.relativenumber = false -- 相对行号
+opt.relativenumber = true -- 相对行号
 opt.wrap = false -- 防止包裹
 opt.cursorline = true -- 光标行
 opt.mouse:append("a") -- 启用鼠标

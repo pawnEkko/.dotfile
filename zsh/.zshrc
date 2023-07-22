@@ -17,7 +17,7 @@ ZSH_THEME="robbyrussell"
 #   自定义别名    #
 ###################
 alias v='nvim'
-alias nv='neovide'
+alias vd='neovide'
 alias nf='neofetch | lolcat'
 alias cls='clear'
 alias ll='ls -l'
