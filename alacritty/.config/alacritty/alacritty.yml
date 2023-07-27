@@ -5,6 +5,9 @@ font:
 
   # # # #
   # 先下载对应字体再来释放配置
+  # 按照个人配置
+  # 在 x11 --> i3wm下的 字体大小会小于 在 wayland --> hyprland 的字体
+  # 默认配置文件按照在 wayland --> hyprland 下的配置为默认配置
   # # # #
 
 
@@ -24,7 +27,7 @@ font:
   # italic:
   #   family: JetBrainsMono
   #   style: italic
-  # size: 7.6
+  # size: 11.6
 
 
   # Hack# # # # # # # # # #
@@ -42,7 +45,7 @@ font:
   italic:
     family: Hack
     style: italic
-  size: 8.5
+  size: 12.5
 
 
   # Monaco # # # # # # # #
@@ -60,7 +63,7 @@ font:
   # italic:
   #   family: Monaco
   #   style: italic
-  # size: 8
+  # size: 11.5
 
 
 ###################

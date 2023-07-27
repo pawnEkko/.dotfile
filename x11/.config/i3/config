@@ -19,17 +19,17 @@ set $mod1 Mod1
 ################
 #一般的按键绑定#
 ################
-#打开rofi（替换i3默认的软件搜索）
+# 打开rofi（替换i3默认的软件搜索）
 bindsym $mod+d exec rofi -show drun
-#打开终端
+# 打开终端
 bindsym $mod+Return exec alacritty
-#打开一个浮动终端
+# 打开一个浮动终端
 bindsym $mod1+Return exec alacritty -t 'alacritty-alarictty'
-#关闭窗口
+# 关闭窗口
 bindsym $mod+q kill
-#使用编号创建/移动到一个工作区
+# 使用编号创建/移动到一个工作区
 bindsym $mod+i exec i3-input -F 'workspace "%s"' -P 'workspace'
-#设置新窗口的位置
+# 设置新窗口的位置
 bindsym $mod+b split h
 bindsym $mod+v split v
 # 设置当前窗口全屏
@@ -38,11 +38,11 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-#将当前焦点窗口浮动
+# 将当前焦点窗口浮动
 bindsym $mod+Shift+space floating toggle
-#用控制键和鼠标控制浮动窗口的位置和大小
+# 用控制键和鼠标控制浮动窗口的位置和大小
 floating_modifier $mod
-#在已经浮动窗口和未浮动窗口之间切换
+# 在已经浮动窗口和未浮动窗口之间切换
 bindsym $mod+space focus mode_toggle
 # 重启i3
 bindsym $mod+Shift+c reload
@@ -113,7 +113,7 @@ bindsym $mod+r mode "resize"
 #########################
 #   窗口移动工作区      #
 #########################
-#移动跟随---将窗口移动到指定工作区并移动到该工作区
+# 移动跟随---将窗口移动到指定工作区并移动到该工作区
 bindsym $mod+Shift+1 move container to workspace number $ws1, workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2, workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3, workspace number $ws3
@@ -124,7 +124,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7, workspace number $
 bindsym $mod+Shift+8 move container to workspace number $ws8, workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9, workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10, workspace number $ws10
-#移动不跟随---将窗口移动到指定工作区但不移动到该工作区
+# 移动不跟随---将窗口移动到指定工作区但不移动到该工作区
 bindsym $mod+Ctrl+1 move container to workspace number $ws1
 bindsym $mod+Ctrl+2 move container to workspace number $ws2
 bindsym $mod+Ctrl+3 move container to workspace number $ws3
@@ -136,16 +136,6 @@ bindsym $mod+Ctrl+8 move container to workspace number $ws8
 bindsym $mod+Ctrl+9 move container to workspace number $ws9
 bindsym $mod+Ctrl+0 move container to workspace number $ws10
 bindsym $mod+Ctrl+i exec i3-input -F 'move container to workspace "%s"' -P 'move to workspace'
-
-
-#########################
-#设置上一个/下一个工作区#
-#########################
-bindsym $mod1+h workspace prev
-bindsym $mod1+l workspace next
-
-bindsym $mod1+Right workspace next
-bindsym $mod1+Left workspace prev
 
 
 ###################
@@ -173,6 +163,12 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+# 设置上一个/下一个工作区
+bindsym $mod1+h workspace prev
+bindsym $mod1+l workspace next
+
+bindsym $mod1+Right workspace next
+bindsym $mod1+Left workspace prev
 
 
 ##########
@@ -231,7 +227,8 @@ exec_always --no-startup-id picom -b
 # 壁纸网站
 # https://bz.zzzmh.cn/index
 # https://pic.netbian.com/new/
-# 直接设置对应目录中的某一张图片作为壁纸
+#
+# 在壁纸文件夹中指定一张壁纸
 exec_always --no-startup-id feh --bg-fill ~/.dotfiles/wallpaper/default.jpg
 # 设置每次开机自动从对应目录选择一张图片作为壁纸
 # exec_always --no-startup-id feh --randomize --bg-fill 壁纸路径

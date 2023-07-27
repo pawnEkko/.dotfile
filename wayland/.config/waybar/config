@@ -1,0 +1,139 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "disk",
+    "tray",
+    "memory",
+    "cpu",
+    "network",
+    "battery",
+    "temperature"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{id}",
+    "persistent_workspaces": {
+      "01": [],
+      "02": [],
+      "03": [],
+      "04": [],
+      "05": [],
+      "06": [],
+      "07": [],
+      "08": [],
+      "09": [],
+      "10": []
+    }
+  },
+  "hyprland/window": {
+    "format": "{title}"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "/: {used} | {percentage_used}%",
+    "path": "/"
+  },
+  "tray": {
+    "icon-size": 17,
+    "spacing": 10
+  },
+  "backlight": {
+    "on-click": "",
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-scroll-up": "brightnessctl set 1%+",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "min-length": 6
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "CHARGE-IMMEDIATELY-NOW ",
+      "Charge-immediately ",
+      "Charge-quickly ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "clock": {
+    "on-click": "",
+    "format": "{: %R   %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    "format-wifi": "直 {essid}",
+    "format-ethernet": " {essid}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Disc.",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+    // "on-click": "wofi-wifi-menu",
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 15
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "ﱝ Muted",
+    "on-click": "~/.config/hypr/scripts/volume_ctl.sh",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        "墳",
+        ""
+      ]
+    }
+  },
+  "temperature": {
+    "thermal-zone": 0,
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C</b>",
+    "format": " <b>{temperatureC}°C</b>"
+  },
+}

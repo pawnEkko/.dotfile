@@ -8,8 +8,9 @@
 
 ## 目录
 * [stow](#stow)
-* [字体](#字体)
-* [polybar](#polybar)
+* [x11](#x11)
+    * [polybar](#polybar)
+* [alacritty](#alacritty)
 * [neovim](#neovim)
 * [zsh](#zsh)
 * [rofi](#rofi)
@@ -21,32 +22,30 @@
 ```
 sudo pacman -S stow
 ```
-2. 将想要同步的配置文件使用以下命令创建软链接(以i3wm为例)
+2. 将想要同步的配置文件使用以下命令创建软链接(以nvim为例)
 ```
-stow i3wm
+stow nvim
 ```
 > stow管理的是软连接所以，同步之后应该在源文件的位置也就是``.dotfile``中修改配置文件
-
-## 字体
-> 配置文件中使用了以下字体先安装字体，否则会造成显示错误，虽然不影响性能，但是比较丑，
+## x11
+> x11渲染器之下使用的是`i3wm`桌面环境
+### polybar
+> 必须安装以下字体
+```
+yay -S ttf-font-awesome-5
+sudo pacman -S otf-font-awesome
 
 ```
-# 终端字体
+> polybar的配置中``lauch.sh``这个执行文件应该需要执权限才可以被`i3wm`调用，使用以下指令：
+```
+chmod 777 ~/.config/polybar/launch.sh
+```
+## alacritty
+> 必须安装以下字体
+```
 paru -S ttf-jetbrains-mono
 paru -S ttf-monaco
 paru -S ttf-hack
-#
-# polybar使用的字体
-sudo pacman -S otf-font-awesome
-yay -S ttf-font-awesome-5
-#
-# zsh主题使用的图标字体
-yay -S ttf-meslo-nerd-font-powerlevel10k
-```
-## polybar
-2. polybar的配置中``lauch.sh``这个执行文件应该需要执权限才可以被i3调用，使用以下指令：
-```
-chmod 777 ~/.config/polybar/launch.sh
 ```
 ## neovim
 > 部分NeoVim插件需要一些依赖、软件、或者环境存在才可以正常使用,使用以下代码安装
@@ -55,7 +54,20 @@ sudo pacman -S nodejs
 sudo pacman -S yarn
 sudo pacman -S rigrep
 ```
+> `neovide` : `i3wm`和`hyprland`下要使用不同的版本，两个版本互相冲突只能同时下载其中一个,切换桌面环境的话版本也要跟着切换
+```
+# hyprland
+paru -S neovide-git
+# i3wm
+sudo pacman -S neovide
+```
+
 ## zsh
+> 必须安装以下字体
+```
+yay -S ttf-meslo-nerd-font-powerlevel10k
+```
+
 > 安装完zsh之后记得在终端中更改默认shell为zsh：`chsh -s /bin/zsh`
 
 1. 安装oh-my-zsh
@@ -83,6 +95,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 > 要在终端中使用以下命令选择主题才可以应用   选择完成后要使用`Alt+a`确认选择
 ```
 rofi-theme-selector
+```
+> `i3`和`hyprland`不同的桌面环境要使用不同的版本，两个版本互相冲突只能同时下载其中一个,切换桌面环境的话版本也要跟着切换
+```
+# hyprland
+paru -S rofi-lbonn-wayland-only-git
+
+# i3wm
+sudo pacman -S rofi
 ```
 ## tmux
 1.在终端中使用以下命令下载tmux的插件管理器

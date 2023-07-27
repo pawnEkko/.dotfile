@@ -7,14 +7,18 @@ end
 
 function M.config()
 	-- 字体
-	-- vim.o.guifont = "Monaco:h8"
-	-- vim.o.guifont = "JetBrainsMono:h7.6"
-	vim.o.guifont = "Hack:h8.5"
+
+	-- 按照个人配置
+	-- 在 x11 --> i3wm下的 字体大小会小于 在 wayland --> hyprland 的字体
+	-- 默认配置文件按照在 wayland --> hyprland 下的配置为默认配置
+	-- vim.o.guifont = "Monaco:h11.5"
+	-- vim.o.guifont = "JetBrainsMono:h12"
+	vim.o.guifont = "Hack:h12.5"
 
 	-- 没有空闲
 	vim.g.neovide_no_idle = true
 	-- 开启轨道动画
-	vim.g.neovide_cursor_vfx_mode = "railgun"
+	vim.g.neovide_cursor_vfx_mode = "pixiedust"
 end
 
 function M.background()
