@@ -34,7 +34,6 @@ stow nvim
 ```
 yay -S ttf-font-awesome-5
 sudo pacman -S otf-font-awesome
-
 ```
 > polybar的配置中``lauch.sh``这个执行文件应该需要执权限才可以被`i3wm`调用，使用以下指令：
 ```
