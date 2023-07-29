@@ -1,4 +1,5 @@
 {
+  // layer 和 position 的值决定了bar的位置，top为屏幕上方，bottom为屏幕下方 默认为top
   "layer": "top",
   "position": "top",
   "height": 38,

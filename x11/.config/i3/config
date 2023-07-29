@@ -4,6 +4,7 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 # pawnEkko 个人 i3-wm 配置文件
+# 可以使用 xrandr --output [name] --mode 分辨率   | 来设置显示器      --mode off 是 关闭显示器 [name] 是显示器的接口
 
 
 
